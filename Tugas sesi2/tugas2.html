@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Profil Biodata</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f0f8ff;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        /* Navigation */
+        .nav {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            background-color: #0078d7;
+            color: white;
+            padding: 5px 0;
+        }
+
+        .nav-item {
+            text-align: center;
+            padding: 8px;
+        }
+
+        .nav-item:first-child {
+            font-weight: bold;
+            text-align: left;
+            padding-left: 20px;
+        }
+
+        .nav-item:not(:first-child) {
+            text-align: right;
+        }
+
+        .nav-item a {
+            color: white;
+            text-decoration: none;
+            padding-right: 20px;
+        }
+
+        .nav-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Header Section */
+        .header {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background-color: white;
+            padding: 30px;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .header-text {
+            padding: 0 10px;
+        }
+
+        .header-text h1 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+
+        .header-img {
+            text-align: right;
+        }
+
+        .header-img img {
+            max-width: 30%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #0078d7;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 4px;
+            text-decoration: none;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        /* About Me Section */
+        .about {
+            margin: 0;
+            text-align: center;
+        }
+
+        .about-header {
+            padding: 20px;
+            background-color: white;
+        }
+
+        .about-header h2 {
+            color: #0078d7;
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .about-header p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            padding: 0 10px 10px 10px;
+        }
+
+        .about-box {
+            background-color: #f0f0f0;
+            padding: 15px;
+            text-align: center;
+            border-radius: 3px;
+        }
+
+        .about-box h3 {
+            color: #0078d7;
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+
+        .about-box p {
+            font-size: 14px;
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            margin: 0;
+            text-align: center;
+        }
+
+        .portfolio-header {
+            padding: 20px;
+            background-color: white;
+        }
+
+        .portfolio-header h2 {
+            color: #0078d7;
+            font-size: 24px;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            padding: 0 10px 20px 10px;
+        }
+
+        .portfolio-item {
+            background-color: white;
+            padding: 5px;
+            text-align: center;
+            border-radius: 3px;
+            border: 1px solid #eee;
+        }
+
+        .portfolio-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 3px;
+        }
+
+        .portfolio-item h3 {
+            color: #333;
+            margin: 10px 0 5px 0;
+            font-size: 14px;
+        }
+
+        .portfolio-item p {
+            font-size: 12px;
+            color: #666;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #0078d7;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 12px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header {
+                grid-template-columns: 1fr;
+            }
+
+            .about-grid,
+            .portfolio-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr 1fr;
+            }
+
+            .about-grid,
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <div class="nav">
+        <div class="nav-item">Brand</div>
+        <div class="nav-item"><a href="#header">Header</a></div>
+        <div class="nav-item"><a href="#about">Biodata</a></div>
+        <div class="nav-item"><a href="#portfolio">Portfolio</a></div>
+    </div>
+    
+    <!-- Header Section -->
+    <div class="header" id="header">
+        <div class="header-text">
+            <h1>Selamat Datang di Website Saya</h1>
+            <p>Ini adalah contoh header dengan dua kolom. Kolom kiri berisi teks seperti ini.</p>
+            <a href="#" class="btn">Pelajari Lebih Lanjut</a>
+        </div>
+        <div class="header-img">
+            <img src="fotopribadi.jpg" alt="Gambar Header">
+        </div>
+    </div>
+    
+    <!-- About Me Section -->
+    <div class="about" id="about">
+        <div class="about-header">
+            <h2>About Me</h2>
+            <p>A brief introduction about myself</p>
+        </div>
+        <div class="about-grid">
+            <!-- Box 1: Full Name -->
+            <div class="about-box">
+                <h3>Full Name</h3>
+                <p>Nur Rizky Romadhon</p>
+            </div>
+            <!-- Box 2: Education -->
+            <div class="about-box">
+                <h3>Education</h3>
+                <p>S2 Teknik Informatika dan Komputer</p>
+            </div>
+            <!-- Box 3: Pekerjaan -->
+            <div class="about-box">
+                <h3>Pekerjaan</h3>
+                <p>Programmer</p>
+            </div>
+            <!-- Box 4: Contact -->
+            <div class="about-box">
+                <h3>Contact</h3>
+                <p>nurrizkyromadhon@gmail.com</p>
+            </div>
+            <!-- Box 5: Hobi -->
+            <div class="about-box">
+                <h3>Hobi</h3>
+                <p>Renang, Billiard</p>
+            </div>
+            <!-- Box 6: Alamat -->
+            <div class="about-box">
+                <h3>Alamat</h3>
+                <p>Surabaya</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Portfolio Section -->
+    <div class="portfolio" id="portfolio">
+        <div class="portfolio-header">
+            <h2>Portofolio</h2>
+        </div>
+        <div class="portfolio-grid">
+            <!-- Proyek 1 -->
+            <div class="portfolio-item">
+                <img src="IMG_2850.JPG" alt="Proyek 1">
+                <h3>Proyek 1</h3>
+                <p>Deskripsi proyek 1</p>
+            </div>
+            <!-- Proyek 2 -->
+            <div class="portfolio-item">
+                <img src="IMG_5603.JPG" alt="Proyek 2">
+                <h3>Proyek 2</h3>
+                <p>Deskripsi proyek 2</p>
+            </div>
+            <!-- Proyek 3 -->
+            <div class="portfolio-item">
+                <img src="IMG_5620.JPG" alt="Proyek 3">
+                <h3>Proyek 3</h3>
+                <p>Deskripsi proyek 3</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2024 Rizky. All rights reserved.</p>
+    </div>
+</body>
+
+</html>
