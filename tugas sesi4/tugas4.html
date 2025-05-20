@@ -1,0 +1,1868 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nur Rizky Romadhon - Portfolio</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css"
+        rel="stylesheet">
+    <!-- AOS Animation Library -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #e74c3c;
+            --accent-color: #3498db;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+            --light-text: #f8f9fa;
+        }
+
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            overflow-x: hidden;
+            background-color: #f9f9f9;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: 700;
+        }
+
+        .section-padding {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            margin-bottom: 60px;
+            position: relative;
+            text-align: center;
+        }
+
+        .section-title::after {
+            content: "";
+            width: 80px;
+            height: 4px;
+            background: var(--secondary-color);
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .text-gradient {
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            padding: 15px 0;
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            padding: 8px 0;
+            background-color: var(--primary-color) !important;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--secondary-color) !important;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .nav-link {
+            font-weight: 600;
+            margin: 0 10px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--secondary-color);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .navbar-toggler {
+            border: none;
+            outline: none;
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+
+        .hire-btn {
+            background: linear-gradient(45deg, var(--secondary-color), #ff7675);
+            border: none;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+        }
+
+        .hire-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(231, 76, 60, 0.4);
+            background: linear-gradient(45deg, #ff7675, var(--secondary-color));
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            padding: 150px 0 100px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+            overflow: hidden;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            color: #555;
+            max-width: 600px;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .btn-cta {
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-primary-custom {
+            background: linear-gradient(45deg, var(--secondary-color), #ff7675);
+            border: none;
+            color: white;
+        }
+
+        .btn-primary-custom:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(231, 76, 60, 0.4);
+            background: linear-gradient(45deg, #ff7675, var(--secondary-color));
+        }
+
+        .btn-outline-custom {
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+        }
+
+        .btn-outline-custom:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(44, 62, 80, 0.3);
+        }
+
+        .profile-container {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .profile-img {
+            width: 90%;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 5px solid white;
+            z-index: 2;
+            position: relative;
+        }
+
+        .profile-bg {
+            position: absolute;
+            width: 90%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--secondary-color), var(--accent-color));
+            border-radius: 20px;
+            top: 20px;
+            right: 0;
+            z-index: 1;
+        }
+
+        .social-icons {
+            margin-top: 30px;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: white;
+            color: var(--primary-color);
+            margin-right: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            background: var(--secondary-color);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* About Section */
+        .about-section {
+            background-color: white;
+        }
+
+        .about-card {
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .about-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, var(--secondary-color), #ff7675);
+            color: white;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        /* Skills Section */
+        .skills-section {
+            background-color: #f9f9f9;
+        }
+
+        .skill-item {
+            margin-bottom: 25px;
+        }
+
+        .skill-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .skill-name {
+            font-weight: 600;
+        }
+
+        .skill-bar {
+            height: 10px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            background: linear-gradient(45deg, var(--secondary-color), #ff7675);
+            height: 100%;
+            border-radius: 5px;
+            transition: width 1s ease;
+            width: 0;
+        }
+
+        /* Services Section */
+        .services-section {
+            background-color: white;
+        }
+
+        .service-card {
+            padding: 40px 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+            background-color: white;
+        }
+
+        .service-card::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 5px;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(45deg, var(--secondary-color), #ff7675);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1);
+        }
+
+        .service-title {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        /* Projects Section */
+        .projects-section {
+            background-color: #f9f9f9;
+        }
+
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .filter-btn {
+            padding: 8px 25px;
+            margin: 5px;
+            border-radius: 30px;
+            background-color: white;
+            color: var(--text-color);
+            border: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: linear-gradient(45deg, var(--secondary-color), #ff7675);
+            color: white;
+            box-shadow: 0 8px 20px rgba(231, 76, 60, 0.3);
+        }
+
+        .project-card {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 25px;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+
+        .project-card:hover .project-img {
+            transform: scale(1.1);
+        }
+
+        .project-category {
+            color: var(--secondary-color);
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .project-title {
+            color: white;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .project-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: white;
+            color: var(--primary-color);
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .project-links a:hover {
+            background: var(--secondary-color);
+            color: white;
+        }
+
+        /* Testimonials Section */
+        .testimonials-section {
+            background-color: white;
+        }
+
+        .testimonial-slider {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            background-color: white;
+            margin: 15px;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        .testimonial-text {
+            font-size: 1.1rem;
+            color: #555;
+            font-style: italic;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-text::before {
+            content: "❝";
+            position: absolute;
+            top: -20px;
+            left: -10px;
+            font-size: 5rem;
+            color: rgba(231, 76, 60, 0.1);
+            z-index: -1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+            border: 3px solid var(--secondary-color);
+        }
+
+        .author-info h5 {
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        .author-info p {
+            color: #777;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 1;
+        }
+
+        .carousel-control-prev {
+            left: -20px;
+        }
+
+        .carousel-control-next {
+            right: -20px;
+        }
+
+        .carousel-indicators {
+            bottom: -40px;
+        }
+
+        .carousel-indicators button {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            opacity: 0.3;
+            transition: all 0.3s ease;
+            margin: 0 5px;
+        }
+
+        .carousel-indicators button.active {
+            background-color: var(--secondary-color);
+            opacity: 1;
+            width: 15px;
+            height: 15px;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+        }
+
+        .contact-form {
+            padding: 40px;
+            border-radius: 15px;
+            background-color: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .form-control {
+            padding: 12px 15px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 0.25rem rgba(231, 76, 60, 0.25);
+        }
+
+        .form-label {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .contact-info {
+            padding: 40px;
+            border-radius: 15px;
+            background: linear-gradient(45deg, var(--primary-color), #34495e);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            color: white;
+            height: 100%;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .contact-info h3::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--secondary-color);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            margin-right: 15px;
+            color: var(--secondary-color);
+            flex-shrink: 0;
+        }
+
+        .contact-text h5 {
+            margin-bottom: 5px;
+            color: var(--secondary-color);
+            font-size: 1.1rem;
+        }
+
+        .contact-text p {
+            margin: 0;
+            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: rgba(255, 255, 255, 0.8);
+            padding: 30px 0;
+        }
+
+        .footer-social a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            background: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--secondary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        /* Modal Styles */
+        .modal-content {
+            border-radius: 15px;
+            border: none;
+            overflow: hidden;
+        }
+
+        .modal-header {
+            background: linear-gradient(45deg, var(--primary-color), #34495e);
+            color: white;
+            border-bottom: none;
+            padding: 20px 30px;
+        }
+
+        .modal-body {
+            padding: 30px;
+        }
+
+        .modal-footer {
+            border-top: none;
+            padding: 15px 30px 25px;
+        }
+
+        .btn-close {
+            background-color: white;
+            opacity: 1;
+        }
+
+        /* Animation Classes */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-up.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 991px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+
+            .navbar-collapse {
+                background-color: var(--primary-color);
+                padding: 20px;
+                border-radius: 10px;
+                margin-top: 15px;
+            }
+
+            .hero-section {
+                padding: 100px 0 80px;
+            }
+
+            .profile-container {
+                margin-top: 50px;
+            }
+
+            .contact-info {
+                margin-top: 30px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .section-padding {
+                padding: 70px 0;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-section {
+                text-align: center;
+            }
+
+            .hero-cta {
+                justify-content: center;
+            }
+
+            .social-icons {
+                justify-content: center;
+            }
+
+            .carousel-control-prev,
+            .carousel-control-next {
+                display: none;
+            }
+
+            .testimonial-card {
+                padding: 25px;
+            }
+        }
+
+        @media (max-width: 575px) {
+            .section-padding {
+                padding: 50px 0;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .filter-btn {
+                padding: 6px 15px;
+                font-size: 0.9rem;
+            }
+
+            .contact-form,
+            .contact-info {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">RIZKY.</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">Testimonials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                        <button class="hire-btn" data-bs-toggle="modal" data-bs-target="#hireModal">
+                            Hire Me
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 hero-content" data-aos="fade-right" data-aos-duration="1000">
+                    <p class="hero-subtitle">PROGRAMMER & DEVELOPER</p>
+                    <h1 class="hero-title">Nur <span class="text-gradient">Rizky</span> Romadhon</h1>
+                    <p class="hero-description">Saya adalah seorang programmer dengan keahlian dalam pengembangan
+                        aplikasi web dan mobile. Dengan berbagai pengalaman dan pengetahuan di bidang teknologi, saya
+                        siap membantu mewujudkan proyek digital Anda.</p>
+                    <div class="hero-cta">
+                        <a href="#projects" class="btn btn-cta btn-primary-custom">Lihat Karya</a>
+                        <a href="#contact" class="btn btn-cta btn-outline-custom">Hubungi Saya</a>
+                    </div>
+                    <div class="social-icons">
+                        <a href="#" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook"><i
+                                class="bi bi-facebook"></i></a>
+                        <a href="#" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter"><i
+                                class="bi bi-twitter"></i></a>
+                        <a href="#" data-bs-toggle="tooltip" data-bs-placement="top" title="Instagram"><i
+                                class="bi bi-instagram"></i></a>
+                        <a href="#" data-bs-toggle="tooltip" data-bs-placement="top" title="LinkedIn"><i
+                                class="bi bi-linkedin"></i></a>
+                        <a href="#" data-bs-toggle="tooltip" data-bs-placement="top" title="GitHub"><i
+                                class="bi bi-github"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="profile-container">
+                        <div class="profile-bg"></div>
+                        <img src="/api/placeholder/500/600" alt="Nur Rizky Romadhon" class="img-fluid profile-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section section-padding">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">About Me</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
+                    <p class="text-center mb-5">Seorang programmer berpengalaman dengan latar belakang pendidikan S2 di
+                        bidang Teknik Informatika dan Komputer. Saya selalu bersemangat untuk belajar teknologi baru dan
+                        mengembangkan solusi inovatif untuk berbagai kebutuhan bisnis dan individu.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="about-card">
+                        <div class="about-icon">
+                            <i class="bi bi-person-fill"></i>
+                        </div>
+                        <h5>Informasi Pribadi</h5>
+                        <ul class="list-unstyled">
+                            <li><strong>Nama:</strong> Nur Rizky Romadhon</li>
+                            <li><strong>Usia:</strong> 28 Tahun</li>
+                            <li><strong>Alamat:</strong> Surabaya, Indonesia</li>
+                            <li><strong>Email:</strong> nurrizkyromadhon@gmail.com</li>
+                            <li><strong>Status:</strong> Available for Freelance</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="about-card">
+                        <div class="about-icon">
+                            <i class="bi bi-mortarboard-fill"></i>
+                        </div>
+                        <h5>Pendidikan</h5>
+                        <ul class="list-unstyled">
+                            <li>
+                                <p><strong>S2 Teknik Informatika dan Komputer</strong></p>
+                                <p>Institut Teknologi Sepuluh Nopember</p>
+                                <p>2020 - 2022</p>
+                            </li>
+                            <li class="mt-3">
+                                <p><strong>S1 Teknik Informatika</strong></p>
+                                <p>Universitas Negeri Surabaya</p>
+                                <p>2015 - 2019</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="about-card">
+                        <div class="about-icon">
+                            <i class="bi bi-briefcase-fill"></i>
+                        </div>
+                        <h5>Pengalaman</h5>
+                        <ul class="list-unstyled">
+                            <li>
+                                <p><strong>Senior Web Developer</strong></p>
+                                <p>PT Digital Technology Indonesia</p>
+                                <p>2022 - Sekarang</p>
+                            </li>
+                            <li class="mt-3">
+                                <p><strong>Junior Developer</strong></p>
+                                <p>Startup Teknologi</p>
+                                <p>2019 - 2022</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4" data-aos="fade-up" data-aos-delay="500">
+                <a href="#" class="btn btn-primary-custom" data-bs-toggle="modal" data-bs-target="#resumeModal">Lihat
+                    Resume</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section section-padding">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">My Skills</h2>
+            <div class="row">
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">HTML/CSS</span>
+                            <span class="skill-percentage">95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="95"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">JavaScript</span>
+                            <span class="skill-percentage">90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">React.js</span>
+                            <span class="skill-percentage">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">PHP/Laravel</span>
+                            <span class="skill-percentage">80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="80"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Node.js</span>
+                            <span class="skill-percentage">75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="75"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">MySQL/MongoDB</span>
+                            <span class="skill-percentage">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">UI/UX Design</span>
+                            <span class="skill-percentage">70%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="70"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Mobile App Dev</span>
+                            <span class="skill-percentage">75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="75"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section section-padding">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">My Services</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card">
+                        <i class="bi bi-code-slash service-icon"></i>
+                        <h3 class="service-title">Web Development</h3>
+                        <p>Pembuatan website profesional dengan desain responsif yang menarik dan fungsionalitas yang
+                            sesuai dengan kebutuhan bisnis Anda.</p>
+                        <ul class="mt-3">
+                            <li>Custom Website Development</li>
+                            <li>E-commerce Solutions</li>
+                            <li>CMS Integration</li>
+                            <li>Website Maintenance</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card">
+                        <i class="bi bi-phone service-icon"></i>
+                        <h3 class="service-title">Mobile App Development</h3>
+                        <p>Pengembangan aplikasi mobile untuk platform Android dan iOS yang intuitif, cepat, dan sesuai
+                            dengan kebutuhan pengguna.</p>
+                        <ul class="mt-3">
+                            <li>Native App Development</li>
+                            <li>Cross-platform Solutions</li>
+                            <li>UI/UX Design for Mobile</li>
+                            <li>App Maintenance & Updates</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-card">
+                        <i class="bi bi-diagram-3 service-icon"></i>
+                        <h3 class="service-title">Database Design</h3>
+                        <p>Perancangan dan pengembangan database yang terstruktur, efisien, dan aman untuk berbagai
+                            keperluan bisnis atau aplikasi.</p>
+                        <ul class="mt-3">
+                            <li>Schema Design</li>
+                            <li>Database Optimization</li>
+                            <li>Data Migration</li>
+                            <li>Security Implementation</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-card">
+                        <i class="bi bi-laptop service-icon"></i>
+                        <h3 class="service-title">UI/UX Design</h3>
+                        <p>Desain antarmuka pengguna yang menarik dan pengalaman pengguna yang intuitif untuk
+                            meningkatkan interaksi dan kepuasan pengguna.</p>
+                        <ul class="mt-3">
+                            <li>User Interface Design</li>
+                            <li>User Experience Research</li>
+                            <li>Wireframing & Prototyping</li>
+                            <li>Design System Development</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-card">
+                        <i class="bi bi-server service-icon"></i>
+                        <h3 class="service-title">API Development</h3>
+                        <p>Pengembangan API yang handal, scalable, dan terstruktur untuk mengintegrasikan berbagai
+                            sistem dan aplikasi.</p>
+                        <ul class="mt-3">
+                            <li>RESTful API Design</li>
+                            <li>API Integration</li>
+                            <li>Authentication & Security</li>
+                            <li>API Documentation</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="600">
+                    <div class="service-card">
+                        <i class="bi bi-gear service-icon"></i>
+                        <h3 class="service-title">Technical Consultation</h3>
+                        <p>Konsultasi teknis untuk proyek digital Anda, mulai dari perencanaan, pemilihan teknologi,
+                            hingga implementasi dan pengembangan.</p>
+                        <ul class="mt-3">
+                            <li>Technology Stack Selection</li>
+                            <li>Project Architecture</li>
+                            <li>Performance Optimization</li>
+                            <li>Technical Assessment</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section section-padding">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">My Projects</h2>
+            <div class="filter-container" data-aos="fade-up" data-aos-delay="100">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="web">Web Development</button>
+                <button class="filter-btn" data-filter="app">Mobile App</button>
+                <button class="filter-btn" data-filter="ui">UI/UX Design</button>
+                <button class="filter-btn" data-filter="other">Other</button>
+            </div>
+            <div class="row project-grid">
+                <div class="col-md-4 project-item" data-category="web" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-card">
+                        <img src="/api/placeholder/600/450" alt="E-commerce Website" class="project-img">
+                        <div class="project-overlay">
+                            <p class="project-category">Web Development</p>
+                            <h4 class="project-title">E-commerce Website</h4>
+                            <div class="project-links">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#projectModal1"><i
+                                        class="bi bi-eye"></i></a>
+                                <a href="#"><i class="bi bi-link-45deg"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 project-item" data-category="app" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-card">
+                        <img src="/api/placeholder/600/450" alt="Fitness Tracking App" class="project-img">
+                        <div class="project-overlay">
+                            <p class="project-category">Mobile App</p>
+                            <h4 class="project-title">Fitness Tracking App</h4>
+                            <div class="project-links">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#projectModal2"><i
+                                        class="bi bi-eye"></i></a>
+                                <a href="#"><i class="bi bi-link-45deg"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 project-item" data-category="ui" data-aos="fade-up" data-aos-delay="400">
+                    <div class="project-card">
+                        <img src="/api/placeholder/600/450" alt="Finance Dashboard UI" class="project-img">
+                        <div class="project-overlay">
+                            <p class="project-category">UI/UX Design</p>
+                            <h4 class="project-title">Finance Dashboard UI</h4>
+                            <div class="project-links">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#projectModal3"><i
+                                        class="bi bi-eye"></i></a>
+                                <a href="#"><i class="bi bi-link-45deg"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 project-item" data-category="web" data-aos="fade-up" data-aos-delay="500">
+                    <div class="project-card">
+                        <img src="/api/placeholder/600/450" alt="Restaurant Website" class="project-img">
+                        <div class="project-overlay">
+                            <p class="project-category">Web Development</p>
+                            <h4 class="project-title">Restaurant Website</h4>
+                            <div class="project-links">
+                                <a href="#"><i class="bi bi-eye"></i></a>
+                                <a href="#"><i class="bi bi-link-45deg"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 project-item" data-category="other" data-aos="fade-up" data-aos-delay="600">
+                    <div class="project-card">
+                        <img src="/api/placeholder/600/450" alt="Inventory Management System" class="project-img">
+                        <div class="project-overlay">
+                            <p class="project-category">Desktop Application</p>
+                            <h4 class="project-title">Inventory System</h4>
+                            <div class="project-links">
+                                <a href="#"><i class="bi bi-eye"></i></a>
+                                <a href="#"><i class="bi bi-link-45deg"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 project-item" data-category="app" data-aos="fade-up" data-aos-delay="700">
+                    <div class="project-card">
+                        <img src="/api/placeholder/600/450" alt="Food Delivery App" class="project-img">
+                        <div class="project-overlay">
+                            <p class="project-category">Mobile App</p>
+                            <h4 class="project-title">Food Delivery App</h4>
+                            <div class="project-links">
+                                <a href="#"><i class="bi bi-eye"></i></a>
+                                <a href="#"><i class="bi bi-link-45deg"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section section-padding">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Client Testimonials</h2>
+            <div class="testimonial-slider" data-aos="fade-up" data-aos-delay="100">
+                <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="testimonial-card">
+                                <p class="testimonial-text">Nur Rizky adalah developer yang sangat profesional dan
+                                    detail-oriented. Proyek e-commerce kami selesai tepat waktu dengan kualitas yang
+                                    luar biasa. Sangat merekomendasikan jasanya!</p>
+                                <div class="testimonial-author">
+                                    <img src="/api/placeholder/100/100" alt="Client 1" class="author-img">
+                                    <div class="author-info">
+                                        <h5>Ahmad Fauzi</h5>
+                                        <p>CEO, PT Digital Solusi</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="testimonial-card">
+                                <p class="testimonial-text">Saya sangat puas dengan aplikasi mobile yang dikembangkan
+                                    oleh Rizky. User interface-nya intuitif dan responsive. Proses komunikasi selama
+                                    pengembangan juga sangat baik dan jelas.</p>
+                                <div class="testimonial-author">
+                                    <img src="/api/placeholder/100/100" alt="Client 2" class="author-img">
+                                    <div class="author-info">
+                                        <h5>Dewi Anggraini</h5>
+                                        <p>Founder, Startup Lokal</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="testimonial-card">
+                                <p class="testimonial-text">Website perusahaan kami mendapatkan banyak pujian setelah
+                                    didesain ulang oleh Rizky. Performance-nya juga meningkat signifikan dan
+                                    SEO-friendly. Kolaborasi yang sangat menyenangkan!</p>
+                                <div class="testimonial-author">
+                                    <img src="/api/placeholder/100/100" alt="Client 3" class="author-img">
+                                    <div class="author-info">
+                                        <h5>Budi Santoso</h5>
+                                        <p>Marketing Director, Company Name</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active"
+                            aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section section-padding">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Contact Me</h2>
+            <div class="row">
+                <div class="col-lg-7" data-aos="fade-up" data-aos-delay="100">
+                    <div class="contact-form">
+                        <form id="contactForm">
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+                                    <label for="name" class="form-label">Your Name</label>
+                                    <input type="text" class="form-control" id="name" placeholder="Enter your name"
+                                        required>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <label for="email" class="form-label">Your Email</label>
+                                    <input type="email" class="form-control" id="email" placeholder="Enter your email"
+                                        required>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <label for="subject" class="form-label">Subject</label>
+                                <input type="text" class="form-control" id="subject" placeholder="Enter subject"
+                                    required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" rows="5" placeholder="Enter your message"
+                                    required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary-custom w-100">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-5" data-aos="fade-up" data-aos-delay="200">
+                    <div class="contact-info">
+                        <h3>Get in Touch</h3>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="bi bi-geo-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h5>Location</h5>
+                                <p>Surabaya, Jawa Timur, Indonesia</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="bi bi-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h5>Email</h5>
+                                <p>nurrizkyromadhon@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="bi bi-phone"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h5>Phone</h5>
+                                <p>+62 812 3456 7890</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="bi bi-clock"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h5>Working Hours</h5>
+                                <p>Monday - Friday: 9AM - 5PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-md-0">&copy; 2025 Nur Rizky Romadhon. All Rights Reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="footer-social">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-twitter"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                        <a href="#"><i class="bi bi-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="bi bi-arrow-up"></i>
+    </a>
+
+    <!-- Project Modals -->
+    <div class="modal fade" id="projectModal1" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">E-commerce Website</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6 mb-4 mb-md-0">
+                            <img src="/api/placeholder/600/400" alt="E-commerce Website" class="img-fluid rounded">
+                        </div>
+                        <div class="col-md-6">
+                            <h5>Project Details</h5>
+                            <p>E-commerce website dengan fitur lengkap untuk sebuah brand fashion lokal. Dibuat dengan
+                                teknologi modern untuk pengalaman belanja online yang menyenangkan.</p>
+                            <div class="mb-3">
+                                <h6>Client</h6>
+                                <p>Fashion Brand Indonesia</p>
+                            </div>
+                            <div class="mb-3">
+                                <h6>Technologies</h6>
+                                <p>React.js, Node.js, MongoDB, Stripe Payment</p>
+                            </div>
+                            <div class="mb-3">
+                                <h6>Year</h6>
+                                <p>2022</p>
+                            </div>
+                            <a href="#" class="btn btn-primary-custom btn-sm">Visit Website</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="projectModal2" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Fitness Tracking App</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6 mb-4 mb-md-0">
+                            <img src="/api/placeholder/600/400" alt="Fitness Tracking App" class="img-fluid rounded">
+                        </div>
+                        <div class="col-md-6">
+                            <h5>Project Details</h5>
+                            <p>Aplikasi mobile untuk tracking aktivitas fitness, nutrisi, dan progress kebugaran.
+                                Dilengkapi dengan fitur social sharing dan integrasi dengan perangkat wearable.</p>
+                            <div class="mb-3">
+                                <h6>Client</h6>
+                                <p>Health & Fitness Startup</p>
+                            </div>
+                            <div class="mb-3">
+                                <h6>Technologies</h6>
+                                <p>React Native, Firebase, Node.js, Health Kit Integration</p>
+                            </div>
+                            <div class="mb-3">
+                                <h6>Year</h6>
+                                <p>2023</p>
+                            </div>
+                            <a href="#" class="btn btn-primary-custom btn-sm">View in App Store</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="projectModal3" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Finance Dashboard UI</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6 mb-4 mb-md-0">
+                            <img src="/api/placeholder/600/400" alt="Finance Dashboard UI" class="img-fluid rounded">
+                        </div>
+                        <div class="col-md-6">
+                            <h5>Project Details</h5>
+                            <p>UI/UX design untuk dashboard keuangan yang modern dan user-friendly. Design ini mencakup
+                                berbagai visualisasi data dan analisis keuangan yang mudah dipahami.</p>
+                            <div class="mb-3">
+                                <h6>Client</h6>
+                                <p>Financial Technology Company</p>
+                            </div>
+                            <div class="mb-3">
+                                <h6>Tools</h6>
+                                <p>Figma, Adobe XD, Illustrator</p>
+                            </div>
+                            <div class="mb-3">
+                                <h6>Year</h6>
+                                <p>2024</p>
+                            </div>
+                            <a href="#" class="btn btn-primary-custom btn-sm">View Full Design</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Resume Modal -->
+    <div class="modal fade" id="resumeModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">My Resume</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <h5 class="mb-4">Education</h5>
+                            <div class="resume-item mb-4">
+                                <h6>S2 Teknik Informatika dan Komputer</h6>
+                                <p class="mb-2"><strong>Institut Teknologi Sepuluh Nopember</strong></p>
+                                <p class="text-muted mb-2">2020 - 2022</p>
+                                <p>GPA: 3.85/4.00</p>
+                                <p>Thesis: Pengembangan Algoritma Machine Learning untuk Deteksi Fraud pada Transaksi
+                                    E-commerce</p>
+                            </div>
+                            <div class="resume-item mb-4">
+                                <h6>S1 Teknik Informatika</h6>
+                                <p class="mb-2"><strong>Universitas Negeri Surabaya</strong></p>
+                                <p class="text-muted mb-2">2015 - 2019</p>
+                                <p>GPA: 3.75/4.00</p>
+                                <p>Skripsi: Implementasi Progressive Web App untuk Aplikasi Marketplace</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <h5 class="mb-4">Work Experience</h5>
+                            <div class="resume-item mb-4">
+                                <h6>Senior Web Developer</h6>
+                                <p class="mb-2"><strong>PT Digital Technology Indonesia</strong></p>
+                                <p class="text-muted mb-2">2022 - Sekarang</p>
+                                <ul>
+                                    <li>Memimpin tim pengembangan untuk proyek-proyek web skala besar</li>
+                                    <li>Mengembangkan solusi e-commerce dengan teknologi MERN stack</li>
+                                    <li>Mengoptimalkan kinerja aplikasi web untuk skala enterprise</li>
+                                    <li>Implementasi CI/CD dan best practices untuk pengembangan software</li>
+                                </ul>
+                            </div>
+                            <div class="resume-item mb-4">
+                                <h6>Junior Developer</h6>
+                                <p class="mb-2"><strong>Startup Teknologi</strong></p>
+                                <p class="text-muted mb-2">2019 - 2022</p>
+                                <ul>
+                                    <li>Pengembangan frontend menggunakan React.js</li>
+                                    <li>Implementasi RESTful API dengan Node.js dan Express</li>
+                                    <li>Integrasi database MongoDB dan SQL</li>
+                                    <li>Pengembangan aplikasi mobile dengan React Native</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-lg-6">
+                            <h5 class="mb-4">Certifications</h5>
+                            <ul>
+                                <li>AWS Certified Developer - Associate</li>
+                                <li>Google Cloud Professional Developer</li>
+                                <li>React.js & React Native Certification</li>
+                                <li>MongoDB Certified Developer</li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6">
+                            <h5 class="mb-4">Languages</h5>
+                            <ul>
+                                <li>Bahasa Indonesia (Native)</li>
+                                <li>English (Professional)</li>
+                                <li>Japanese (Basic)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a href="#" class="btn btn-primary-custom">Download PDF</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hire Me Modal -->
+    <div class="modal fade" id="hireModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Hire Me</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="hireForm">
+                        <div class="mb-3">
+                            <label for="clientName" class="form-label">Your Name</label>
+                            <input type="text" class="form-control" id="clientName" placeholder="Enter your name"
+                                required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="clientEmail" class="form-label">Your Email</label>
+                            <input type="email" class="form-control" id="clientEmail" placeholder="Enter your email"
+                                required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="projectType" class="form-label">Project Type</label>
+                            <select class="form-select" id="projectType" required>
+                                <option value="" disabled selected>Select project type</option>
+                                <option value="website">Website Development</option>
+                                <option value="mobile">Mobile App Development</option>
+                                <option value="design">UI/UX Design</option>
+                                <option value="consulting">Technical Consulting</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="projectBudget" class="form-label">Estimated Budget</label>
+                            <select class="form-select" id="projectBudget" required>
+                                <option value="" disabled selected>Select budget range</option>
+                                <option value="less5k">Less than $5,000</option>
+                                <option value="5k10k">$5,000 - $10,000</option>
+                                <option value="10k20k">$10,000 - $20,000</option>
+                                <option value="more20k">More than $20,000</option>
+                                <option value="discuss">To be discussed</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="projectDetails" class="form-label">Project Details</label>
+                            <textarea class="form-control" id="projectDetails" rows="4"
+                                placeholder="Describe your project requirements" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="projectDeadline" class="form-label">Expected Deadline</label>
+                            <input type="date" class="form-control" id="projectDeadline">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary-custom" id="submitHireForm">Submit Request</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <!-- Custom Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Initialize AOS Animation
+            AOS.init({
+                duration: 800,
+                once: true
+            });
+
+            // Navbar scroll effect
+            const navbar = document.querySelector('.navbar');
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+
+            // Initialize tooltips
+            const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl);
+            });
+
+            // Skill progress animation
+            const skillProgress = document.querySelectorAll('.skill-progress');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const width = entry.target.getAttribute('data-width');
+                        entry.target.style.width = width + '%';
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            skillProgress.forEach(progress => {
+                observer.observe(progress);
+            });
+
+            // Portfolio filtering
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const projectItems = document.querySelectorAll('.project-item');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+
+                    // Get filter value
+                    const filterValue = this.getAttribute('data-filter');
+
+                    // Filter projects
+                    projectItems.forEach(item => {
+                        const category = item.getAttribute('data-category');
+                        if (filterValue === 'all' || filterValue === category) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Back to top button functionality
+            const backToTopButton = document.getElementById('backToTop');
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 300) {
+                    backToTopButton.classList.add('show');
+                } else {
+                    backToTopButton.classList.remove('show');
+                }
+            });
+
+            backToTopButton.addEventListener('click', function (e) {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // Form submission handlers (add your logic here)
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    // Add your form submission logic here
+                    alert('Thank you for your message! I will get back to you soon.');
+                    contactForm.reset();
+                });
+            }
+
+            const submitHireButton = document.getElementById('submitHireForm');
+            if (submitHireButton) {
+                submitHireButton.addEventListener('click', function () {
+                    // Add your hire form submission logic here
+                    alert('Thank you for your interest! I will review your project details and contact you soon.');
+                    document.getElementById('hireForm').reset();
+                    bootstrap.Modal.getInstance(document.getElementById('hireModal')).hide();
+                });
+            }
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    if (this.getAttribute('href') !== '#') {
+                        e.preventDefault();
+                        const targetId = this.getAttribute('href');
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                            const targetPosition = targetElement.offsetTop - navbarHeight;
+                            window.scrollTo({
+                                top: targetPosition,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+
+            // Active nav link based on scroll position
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            window.addEventListener('scroll', function () {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                    if (window.scrollY >= (sectionTop - navbarHeight - 100)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
